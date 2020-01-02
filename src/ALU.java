@@ -22,10 +22,11 @@ public class ALU {
 			tmpNum = number;
 		}
 		// 下面对绝对值进行处理
-		int n = Integer.valueOf(tmpNum);
+		int n = Integer.valueOf(tmpNum); // int n = 233;
 		while (n >= 1) {
 			result.insert(0, String.valueOf(n % 2));
-			n = (n - n * 2) / 2;
+			n = n / 2;
+//			n = (n - n * 2) / 2;
 		}
 		// 若是负数,取反加一
 		if (isMinus) {
