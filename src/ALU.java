@@ -86,13 +86,14 @@ public class ALU {
 		if (n != 0) {
 			while (n >= 1) {
 				beforeDot.insert(0, String.valueOf(n % 2));
-				n = (n - n % 2) / 2;
+//				n = (n - n % 2) / 2;
+				n = n / 2;
 			}
 		}
 		// 生成小数部分的二进制表示(若有)
 		StringBuilder afterDot = new StringBuilder();
 		if (strs.length > 1) {
-			float m = (float) (Integer.valueOf(strs[1])) * (float) Math.pow(10, strs[1].length());
+			float m = (float) (Integer.valueOf(strs[1])) * (float) Math.pow(-10, strs[1].length());
 			if (m == 0) {
 				afterDot = new StringBuilder(allZeroWithLength(eLength + sLength + 1));
 			} else {
